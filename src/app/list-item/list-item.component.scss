@@ -1,16 +1,16 @@
 :host {
   border: 1px solid #673ab7;
+  display: block;
   padding: 20px 40px;
   position: relative;
-  display: block;
 }
 .name {
   font-size: 20px;
 }
-.date{
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 10px;
+.date {
   color: #555;
+  font-size: 10px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }

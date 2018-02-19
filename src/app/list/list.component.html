@@ -1,3 +1,12 @@
 <a routerLink="/home">
   <i class="material-icons home-icon">arrow_back</i>
 </a>
+<div class="list">
+  <h1>Lista zadań</h1>
+  <app-list-item 
+    *ngFor="let task of tasks" 
+    [task]="task"
+    class="list-item"
+  >
+  </app-list-item>
+</div>

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 
 import { Task } from '../task';
 
@@ -8,13 +9,28 @@ import { Task } from '../task';
   styleUrls: ['./list-item.component.scss']
 })
 
-export class ListItemComponent implements OnInit {
+export class ListItemComponent implements OnChanges {
   @Input()
   public task: Task;
-
-  constructor() { }
-
-  ngOnInit() {
+  
+  public taskForm: FormGroup;
+  
+  constructor( private formBuilder : FormBuilder) { 
+    this.createForm();    
   }
 
+  createForm() {
+    this.taskForm = this.formBuilder.group({
+      done: '',
+      name: ''
+    });
+  }
+
+  ngOnChanges() {
+    this.taskForm.patchValue({
+      done: this.task.done,
+      name: this.task.name
+    });
+  }
+  
 }

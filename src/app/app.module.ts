@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { TaskService } from './task.service';
 import { ListItemComponent } from './list-item/list-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ListItemComponent } from './list-item/list-item.component';
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule
   ],
   providers: [TaskService],
   bootstrap: [AppComponent]

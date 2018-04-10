@@ -1,0 +1,12 @@
+<form [formGroup]="taskForm">
+  <input type="checkbox" formControlName="done">
+  <input type="text" formControlName="name">
+</form>
+<div class="name">
+  {{ task.name }}
+</div>
+<div class="date">
+  {{ task.date | date:'yyyy-MM-dd' }}
+</div>
+
+<pre>{{ taskForm.value | json }}</pre>

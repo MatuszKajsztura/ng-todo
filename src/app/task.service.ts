@@ -8,15 +8,19 @@ import { Task } from './task';
 export class TaskService {
 
   private TASKS: Task[] = [
-      new Task('zadanie 1', new Date(2018,1,2)),
-      new Task('zadanie 2', new Date(2018,10,20)),
-      new Task('zadanie 3'),
-      new Task('zadanie 4'),  
+      new Task(1,'zadanie 1', new Date(2018,1,2)),
+      new Task(2,'zadanie 2', new Date(2018,10,20)), 
     ];
 
   constructor() { }
 
   getTasks(): Observable<Task[]> {
-    return of(this.TASKS.slice());
+    return of(JSON.parse(JSON.stringify(this.TASKS)));
+  }
+  updateTasks(e): void {
+    const whichTask = this.TASKS.find(t => t.id === e.id);
+    whichTask.name = e.name;
+    whichTask.done = e.done;
+    console.log(this.TASKS)
   }
 }

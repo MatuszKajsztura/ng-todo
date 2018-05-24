@@ -8,20 +8,24 @@ import { TaskService } from '../task.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
+
 export class ListComponent implements OnInit {
 
   public tasks: Task[];
-  
+
   constructor(private taskService: TaskService) { }
-  
+
   ngOnInit() {
     this.getTasks();
   }
+
   public getTasks(): void {
-    this.taskService.getTasks()
-    .subscribe(tasks => { this.tasks = tasks });
+    this.taskService.getTasks() // pobranie listy taskow z serwisu
+    .subscribe(tasks => { this.tasks = tasks; });
   }
-  public saveChanges(e){
-      this.taskService.updateTasks(e);
+
+  public saveChanges(e) {
+      this.taskService.updateTask(e); // przesłanie zmienonego zadania do serwisu
+      this.getTasks(); // pobranie listy tasków po zakutalizowaniu zadania
   }
 }

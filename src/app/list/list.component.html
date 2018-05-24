@@ -2,16 +2,17 @@
   <i class="material-icons home-icon">arrow_back</i>
 </a>
 <div class="list">
+  <app-new-item 
+    (onAdd)="getTasks()"
+  >
+  </app-new-item>
   <h1>Lista zadań</h1>
+  <!-- input do list-item [task]="task" -->
+  <!-- output z list-item (onChange)="saveChanges($event)"-->
   <app-list-item 
     *ngFor="let task of tasks" 
-    [task]="task"
+    [task]="task" 
     (onChange)="saveChanges($event)"
-    class="list-item"
-  >
-  </app-list-item>
-  <app-list-item
-    (onChange)="add($event)"
     class="list-item"
   >
   </app-list-item>

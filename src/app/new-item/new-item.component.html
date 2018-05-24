@@ -1,0 +1,11 @@
+<h1>Dodaj zadanie</h1>
+
+<form [formGroup]="newTaskForm">
+  <label>Treść</label>
+  <input formControlName='name' type="text">
+  <label>Data</label>
+  <input formControlName='date' type="date">
+  <button type="submit" (click)='addTask()'>Dodaj</button>
+</form>
+
+<pre>{{ newTaskForm.value | json }}</pre>

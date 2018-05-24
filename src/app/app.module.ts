@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
+import { NewItemComponent } from './new-item/new-item.component';
 import { TaskService } from './task.service';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     ListComponent,
-    ListItemComponent
+    ListItemComponent,
+    NewItemComponent
   ],
   imports: [
     BrowserModule,

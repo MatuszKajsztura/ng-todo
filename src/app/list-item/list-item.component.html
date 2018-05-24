@@ -1,12 +1,16 @@
-<form [formGroup]="taskForm">
-  <input type="checkbox" formControlName="done">
-  <input type="text" formControlName="name">
-</form>
 <div class="name">
   {{ task.name }}
 </div>
 <div class="date">
   {{ task.date | date:'yyyy-MM-dd' }}
 </div>
-
+<p>Edycja:</p>
+<form [formGroup]="taskForm">
+  <label>Treść</label>
+    <input type="text" formControlName="name">
+  <label>Zrobione</label>
+    <input type="checkbox" formControlName="done">
+  <button type="button" (click)='saveChanges()'>Zapisz</button>
+  <button type="button" (click)='deleteTask()'>Usuń zadanie</button>
+</form>
 <pre>{{ taskForm.value | json }}</pre>

@@ -20,12 +20,20 @@ export class ListComponent implements OnInit {
   }
 
   public getTasks(): void {
-    this.taskService.getTasks() // pobranie listy taskow z serwisu
-    .subscribe(tasks => { this.tasks = tasks; });
+    // this.taskService.getTasks() // pobranie listy taskow z serwisu
+    // .subscribe(tasks => {
+    //   this.tasks = tasks;
+    //   console.log('get tasks', this.tasks);
+    // });
+    this.taskService.getTasks()
+      .subscribe(tasks => {
+        this.tasks = tasks;
+    });
+
   }
 
-  public saveChanges(e) {
-      this.taskService.updateTask(e); // przesłanie zmienonego zadania do serwisu
-      this.getTasks(); // pobranie listy tasków po zakutalizowaniu zadania
+  public updateTask(formValue) {
+      this.taskService.updateTask(formValue); // przesłanie zmienonego zadania do serwisu
+      // this.getTasks(); // pobranie listy tasków po zakutalizowaniu zadania
   }
 }

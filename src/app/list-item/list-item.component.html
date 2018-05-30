@@ -4,13 +4,32 @@
 <div class="date">
   {{ task.date | date:'yyyy-MM-dd' }}
 </div>
-<p>Edycja:</p>
 <form [formGroup]="taskForm">
-  <label>Treść</label>
+  <div>Treść
     <input type="text" formControlName="name">
-  <label>Zrobione</label>
+  </div>
+  <div>Zrobione
     <input type="checkbox" formControlName="done">
-  <button type="button" (click)='saveChanges()'>Zapisz</button>
-  <button type="button" (click)='deleteTask()'>Usuń zadanie</button>
+  </div>
+  <div>Data
+    <input type="date" formControlName="date">
+  </div>
+  <button 
+    type="button"
+    (click)='updateTask()'
+    color="primary"
+    mat-raised-button
+  >
+    Zapisz
+  </button>
+  <button 
+    class='delete-btn'
+    type="button" 
+    (click)='deleteTask()'
+    color="primary"
+    mat-raised-button
+  >
+  Usuń zadanie
+</button>
 </form>
-<pre>{{ taskForm.value | json }}</pre>
+<!-- <pre>{{ taskForm.value | json }}</pre> -->

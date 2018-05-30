@@ -1,11 +1,20 @@
-<h1>Dodaj zadanie</h1>
+<div class="new-item-wrapper">
+  <h1>Dodaj zadanie</h1>
+</div>
 
 <form [formGroup]="newTaskForm">
   <label>Treść</label>
   <input formControlName='name' type="text">
   <label>Data</label>
   <input formControlName='date' type="date">
-  <button type="submit" (click)='addTask()'>Dodaj</button>
+  <button 
+    type="submit"
+    (click)='addTask()'
+    color="primary"
+    mat-raised-button
+  >
+  Dodaj
+</button>
 </form>
 
-<pre>{{ newTaskForm.value | json }}</pre>
+<!-- <pre>{{ newTaskForm.value | json }}</pre> -->

@@ -8,11 +8,12 @@
   </app-new-item>
   <h1>Lista zadań</h1>
   <!-- input do list-item [task]="task" -->
-  <!-- output z list-item (onChange)="saveChanges($event)"-->
+  <!-- outputy z list-item (onChange)="saveChanges($event)" (onDelete)="getTasks()  -->
+  <!-- (onChange)="updateTask($event)"
+  (onDelete)="getTasks()" -->
   <app-list-item 
     *ngFor="let task of tasks" 
     [task]="task" 
-    (onChange)="saveChanges($event)"
     class="list-item"
   >
   </app-list-item>

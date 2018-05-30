@@ -9,8 +9,9 @@ import { TaskService } from '../task.service';
   styleUrls: ['./new-item.component.scss']
 })
 export class NewItemComponent implements OnInit {
+  // INFORMACJA DO RODZICA ŻE DODANO TASK:
   // tslint:disable-next-line:no-output-on-prefix
-  @Output() onAdd: EventEmitter<any> = new EventEmitter<any>();
+  // @Output() onAdd: EventEmitter<any> = new EventEmitter<any>();
 
   newTask: Task;
   newTaskForm: FormGroup;
@@ -36,8 +37,9 @@ export class NewItemComponent implements OnInit {
   addTask() {
     this.newTask = this.newTaskForm.value;
     this.taskService.addTask(this.newTask);
-    this.onAdd.emit();
     this.newTaskForm.reset();
+    // INFORMACJA DO RODZICA ŻE DODANO TASK
+    // this.onAdd.emit();
   }
 
 }

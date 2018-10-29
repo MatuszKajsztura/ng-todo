@@ -1,11 +1,10 @@
 export class Task {
 
   constructor(
-    public id: string,
+    public id: number,
     public name: string,
-    public date: Date = new Date(),
+    public date: Date,
     public done: boolean = false
   ) { }
 
 }
-
